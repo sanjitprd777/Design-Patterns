@@ -6,3 +6,4 @@
 
 - AbstractFactory
 - Builder
+- Factory
