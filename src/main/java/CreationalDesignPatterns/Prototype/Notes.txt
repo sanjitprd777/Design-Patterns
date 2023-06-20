@@ -1,0 +1,37 @@
+Prototype Design Pattern:
+- Copy existing objects without making code dependent on their classes.
+
+
+Problem:
+You want to create and exact copy of an existing object.
+Basic way: Create a new object of the same class. Go over all the fields of original object and copy their values to new object.
+Problem with this approach:
+1. Not all objects can be copied this way because some fields may be private and not visible outside.
+2. You've to know object class to create duplicate hence code becomes dependent on that class.
+3. Sometimes you only know of the object interface but not concrete class.
+
+
+Solution:
+1. Cloning process are delegated to actual object that are being cloned.
+2. Declare a common interface for all such object supporting cloning. Use this interface as datatype to clone without
+coupling concrete classes. Such interface contains just a single 'clone' method.
+3. An object that support cloning is called a 'prototype'. When  object has lots of fields and configurations, cloning them
+is better alternative that subclassing.
+
+Here’s how it works: you create a set of objects, configured in various ways. When you need an object like the
+one you’ve configured, you just clone a prototype instead of constructing a new object from scratch.
+
+
+Applicability
+- Use the Prototype pattern when your code shouldn’t depend on the concrete classes of objects that you need to copy.
+- This happens a lot when your code works with objects passed to you from 3rd-party code via some interface.
+The concrete classes of these objects are unknown, and you couldn't depend on them even if you wanted to.
+- The Prototype pattern provides the client code with a general interface for working with all objects that support cloning.
+This interface makes the client code independent of the concrete classes of objects that it clones.
+
+
+Implementation:
+1. Create an interface with only one method clone() and all other classes will implement it.
+2. Create a constructor in all class with parameter of same class type. Assign the value of passed variable to thej
+   newly created object.
+3. Override the clone() method and make a call using new keyword to create the object and return it.
