@@ -29,8 +29,5 @@ public class Demo {
 
         System.out.println("SquarePeg with width: " + squarePeg1.getWidth() + " has radius " + squarePegAdapter1.getRadius()
                 + ", fits in RoundHole with radius: " + roundHole.getRadius() + " : " + roundHole.fits(squarePegAdapter1));
-
-
-
     }
 }
