@@ -24,16 +24,17 @@ public class Singleton {
         //
         // You can read more info DCL issues in Java here:
         // https://refactoring.guru/java-dcl-issue
-
+        // The reason why we are using a separate local variable is because we want to use
+        // volatile variable less possible to increase performance by 40%.
         Singleton result = instance;
-        if (result != null) {
-            return result;
-        }
-        synchronized (Singleton.class) {
-            if (instance == null) {
-                instance = new Singleton(value);
+        if (result == null) {
+            synchronized (Singleton.class) {
+                result = instance;
+                if (result == null) {
+                    instance = result = new Singleton(value);
+                }
             }
-            return instance;
         }
+        return result;
     }
 }
