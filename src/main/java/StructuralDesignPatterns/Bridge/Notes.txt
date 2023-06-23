@@ -1,0 +1,32 @@
+Bridge
+- Lets you split a large class or a set of closely related classes into two separate hierarchies—abstraction and
+implementation—which can be developed independently of each other.
+
+
+Problem:
+Suppose there is a "Shape" class having two subclasses "square" and "circle".
+Now you introduce a property 'color' to Shape. Now there are four subclasses. "RedCircle", "BlueCircle", "RedSquare", "BlueSquare".
+Now you add another shape called triangle. Hence, you need to add two more subclasses. "RedTriangle" & "BlueTriangle".
+Now you add another color 'green'. Now you need to add three more subclasses, "GreenCircle", "GreenTriangle", "GreenSquare".
+
+This will grow huge as we start adding more shapes and color properties.
+
+Solution:
+- This problem occurs because we're trying to extend the shape classes in two independent dimensions: by form and by color.
+That's a very common issue with class inheritance.
+- The Bridge pattern attempts to solve this problem by switching from inheritance to the object composition.
+What this means is that you extract one of the dimensions into a separate class hierarchy, so that the original classes
+will reference an object of the new hierarchy, instead of having all of its state and behaviors within one class.
+
+Following this approach, we can extract the color-related code into its own class with two subclasses: Red and Blue.
+The Shape class then gets a reference field pointing to one of the color objects. Now the shape can delegate any
+color-related work to the linked color object. That reference will act as a bridge between the Shape and Color classes.
+From now on, adding new colors won’t require changing the shape hierarchy, and vice versa.
+
+
+Application:
+- The Bridge pattern lets you split the monolithic class into several class hierarchies. After this, you can change the
+classes in each hierarchy independently of the classes in the others. This approach simplifies code maintenance and
+minimizes the risk of breaking existing code.
+- The Bridge suggests that you extract a separate class hierarchy for each of the dimensions. The original class
+delegates the related work to the objects belonging to those hierarchies instead of doing everything on its own.
