@@ -1,0 +1,25 @@
+Composite Pattern:
+- Compose objects into tree structures and then work on these structures as if they were individual objects.
+- Composite is a structural design pattern that allows composing objects into a tree-like structure and work
+with it as if it was a singular object.
+
+
+Problem:
+- Composite model only makes sense when the core model of your app can be represented as a tree structure.
+Imagine a directory structure where a directory can contain files or another directory.
+In order to implement it, you've to know the class of the directory and files type, which makes it a bit diff to implement.
+
+
+Solution:
+- The composite pattern suggests you work with Directory and files through a common interface through a method declared.
+- The greatest benefit of this approach is that you don’t need to care about the concrete classes of objects that
+compose the tree. You don’t need to know whether an object is a simple product or a sophisticated box. You can treat
+them all the same via the common interface. When you call a method, the objects themselves pass the request down the tree.
+
+
+Applicability:
+- Use the Composite pattern when you have to implement a tree-like object structure.
+- The Composite pattern provides you with two basic element types that share a common interface: simple leaves and complex containers. A container can be composed of both leaves and other containers. This lets you construct a nested recursive object structure that resembles a tree.
+- Use the pattern when you want the client code to treat both simple and complex elements uniformly.
+- All elements defined by the Composite pattern share a common interface. Using this interface, the client doesn’t have to worry about the concrete class of the objects it works with.
+

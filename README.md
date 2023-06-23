@@ -14,3 +14,4 @@
 
 - Adapter
 - Bridge
+- Composite
