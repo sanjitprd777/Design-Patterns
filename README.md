@@ -17,3 +17,5 @@
 - Bridge
 - Composite
 - Decorator
+- Facade
+- Flyweight

@@ -1,0 +1,56 @@
+Flyweight Pattern:
+- Flyweight is a structural design pattern that lets you fit more objects into the available amount of RAM by sharing
+common parts of state between multiple objects instead of keeping all the data in each object.
+- An object that only stores the intrinsic state is called a flyweight.
+- Flyweight is a structural design pattern that allows programs to support vast quantities of objects by keeping
+  their memory consumption low.
+
+Problem:
+Suppose a class represents a bullet which consists of properties like color, speed, image, etc.
+Now, image consists of 90% of the memory of a single bullet object.
+If you make 1M bullet objects, then the amount of memory consumed by bullet objects will be huge.
+
+
+Solution:
+The image is the same for all bullet objects of the same type. Hence, we can share that property among all bullet objects to save memory.
+Create a class denoting repeating (intrinsic) immutable state containing such properties.
+
+This constant data of an object is usually called the intrinsic state. It lives within the object;
+other objects can only read it, not change it. The rest of the object’s state, often altered "from the outside"
+by other objects, is called the extrinsic state.
+
+The Flyweight pattern suggests that you stop storing the extrinsic state inside the object. Instead, you should pass
+this state to specific methods which rely on it. Only the intrinsic state stays within the object, letting you reuse
+it in different contexts. As a result, you'd need fewer of these objects since they only differ in the intrinsic state,
+which has much fewer variations than the extrinsic.
+
+
+Flyweight and immutability:
+Since the same flyweight object can be used in different contexts, you have to make sure that its state
+can’t be modified. A flyweight should initialize its state just once, via constructor parameters.
+It shouldn’t expose any setters or public fields to other objects.
+
+
+Flyweight factory
+- For more convenient access to various flyweights, you can create a factory method that manages a pool of existing
+flyweight objects. The method accepts the intrinsic state of the desired flyweight from a client,
+looks for an existing flyweight object matching this state, and returns it if it was found.
+If not, it creates a new flyweight and adds it to the pool.
+- There are several options where this method could be placed. The most obvious place is a flyweight container.
+Alternatively, you could create a new factory class. Or you could make the factory method static and
+put it inside an actual flyweight class.
+
+How to Implement:
+1. Divide fields of a class that will become a flyweight into two parts:
+   the intrinsic state: the fields that contain unchanging data duplicated across many objects
+   the extrinsic state: the fields that contain contextual data unique to each object
+2. Leave the fields that represent the intrinsic state in the class, but make sure they're immutable. They should take
+   their initial values only inside the constructor.
+3. Go over methods that use fields of the extrinsic state. For each field used in the method, introduce a new
+   parameter and use it instead of the field.
+4. Optionally, create a factory class to manage the pool of flyweights. It should check for an existing flyweight
+   before creating a new one. Once the factory is in place, clients must only request flyweights through it.
+   They should describe the desired flyweight by passing its intrinsic state to the factory.
+5. The client must store or calculate values of the extrinsic state (context) to be able to call methods of
+   flyweight objects. For the sake of convenience, the extrinsic state along with the flyweight-referencing
+   field may be moved to a separate context class.
