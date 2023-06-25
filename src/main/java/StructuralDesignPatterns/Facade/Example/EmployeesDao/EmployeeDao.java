@@ -14,7 +14,7 @@ public class EmployeeDao {
     List<Employee> itEmployeeList;
     List<Employee> janitorEmployeeList;
 
-    private static List<String> janitorJobList = Arrays.asList("Cleaning", "Helping");
+    private static final List<String> janitorJobList = Arrays.asList("Cleaning", "Helping");
 
     public EmployeeDao() {
         itEmployeeList = new ArrayList<>();
