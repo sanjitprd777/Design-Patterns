@@ -20,3 +20,7 @@
 - Facade
 - Flyweight
 - Proxy
+
+### Behavioral Design Patterns
+
+- Chain Of Responsibility
