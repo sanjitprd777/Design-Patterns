@@ -24,3 +24,12 @@
 ### Behavioral Design Patterns
 
 - Chain Of Responsibility
+- Command
+- Iterator
+- Mediator
+- Memento
+- Observer
+- State
+- Strategy
+- Template Method
+- Visitor

@@ -1,0 +1,13 @@
+Command Pattern:
+- Command is a behavioral design pattern that turns a request into a stand-alone object that contains all information about the request.
+  This transformation lets you pass requests as a method arguments, delay or queue a request’s execution, and support undoable operations.
+
+
+Problem:
+You create a toolbar for your new text-editor app. You also create a neat Button class that can be used for generic button also.
+Since at all places, the button looks similar, but they're supposed to do different things.
+Now where would you put the code for the various click handlers of these buttons? One solution is to create subclasses for each.
+This leads to a lot of code duplication with enormous number of subclasses.
+
+
+Solution:
