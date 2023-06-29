@@ -1,0 +1,53 @@
+Observer pattern:
+- Observer is a behavioral design pattern that lets you define a subscription mechanism to notify multiple
+  objects about any events that happen to the object they're observing.
+- The Observer Pattern defines a one-to-many dependency between objects so that when one object changes state,
+  all its dependents are notified and updated automatically.
+
+
+Problem:
+You've two types of an object:
+Customer and Store. Customer is very interested in some store products like phone.
+The customer could visit the store every time to check product availability. But since the product is not avl, yet, the traffic
+is useless.
+The store could also send tons of email (can be spam) to all customers each time a new product is avl as it doesn't know which
+customers are interested in the product.
+This looks very conflicting and wastes customer time for product checking and system resource for emails.
+
+
+Solution:
+The object that has an interesting state is called subject or publisher. All other objects that track changes are subscribers.
+Acc to an observer pattern, you add a subscription mechanism to publisher class so indiv. objects can sub/unsubs to stream of event
+coming from publisher. We can store a list of subscribers in the publisher class list and notify them when something changes.
+In the Real world, there can be plenty of subscriber hence publisher didn't know all of them beforehand. Thus, to resolve this,
+all subscribers implement the same interface and that the publisher communicates with them only via that interface.
+
+The same can be done with Publisher class. If your app has several different types of publishers, and you want to make
+your subscribers compatible with all of them, you can go even further and make all publishers follow the same interface.
+This interface would only need to describe a few subscription methods. The interface would allow subscribers to observe
+publishers’ states without coupling to their concrete classes.
+
+
+Applicability:
+- Use the pattern when some objects in your app must observe others, but only for a limited time or in specific cases.
+  The subscription list is dynamic, so subscribers can join or leave the list whenever they need to.
+
+
+How to Implement:
+1. Look over your business logic and try to break it down into two parts: the core functionality, independent from
+   other code, will act as the publisher; the rest will turn into a set of subscriber classes.
+2. Declare the subscriber interface. At a bare minimum, it should declare a single update method.
+3. Declare the publisher interface and describe a pair of methods for adding a subscriber object to and removing it
+   from the list. Remember that publishers must work with subscribers only via the subscriber interface.
+4. Decide where to put the actual subscription list and the implementation of subscription methods. Usually, this code
+   looks the same for all types of publishers, so the obvious place to put it is in an abstract class derived directly
+   from the publisher interface. Concrete publishers extend that class, inheriting the subscription behavior.
+5. However, if you’re applying the pattern to an existing class hierarchy, consider an approach based on composition:
+   put the subscription logic into a separate object, and make all real publishers use it.
+6. Create concrete publisher classes. Each time something important happens inside a publisher, it must notify all its subscribers.
+7. Implement the update notification methods in concrete subscriber classes. Most subscribers would need some context
+   data about the event. It can be passed as an argument of the notification method.
+8. But there’s another option. Upon receiving a notification, the subscriber can fetch any data directly from the
+   notification. In this case, the publisher must pass itself via the update method. The less flexible option is to link
+   a publisher to the subscriber permanently via the constructor.
+9. The client must create all necessary subscribers and register them with proper publishers.
