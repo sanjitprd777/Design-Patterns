@@ -34,7 +34,7 @@ public class WeatherData implements Subject {
         if (observers.size() > 0) {
             System.out.println("Notifying everyone!");
             for (Observer o : observers) {
-                o.update(temperature, humidity, pressure);
+                o.update();
             }
         }
         else {
@@ -46,10 +46,22 @@ public class WeatherData implements Subject {
         notifyObserver();
     }
 
-    public void setMeasurements(float newTemprature, float newHumidity, float newPressure) {
-        this.temperature = newTemprature;
+    public void setMeasurements(float newTemperature, float newHumidity, float newPressure) {
+        this.temperature = newTemperature;
         this.humidity = newHumidity;
         this.pressure = newPressure;
         measurementChanged();
+    }
+
+    public float getTemperature() {
+        return temperature;
+    }
+
+    public float getHumidity() {
+        return humidity;
+    }
+
+    public float getPressure() {
+        return pressure;
     }
 }

@@ -1,6 +1,7 @@
 package BehavioralDesignPattern.Observer.Example.Observer;
 
 import BehavioralDesignPattern.Observer.Example.Observable.Subject;
+import BehavioralDesignPattern.Observer.Example.Observable.WeatherData;
 
 public class CurrentConditionsDisplay implements Observer, DisplayElement {
 
@@ -8,8 +9,11 @@ public class CurrentConditionsDisplay implements Observer, DisplayElement {
     private float humidity;
     private float pressure;
 
-    public CurrentConditionsDisplay(Subject subject) {
-        subject.registerObserver(this);
+    private final WeatherData weatherData;
+
+    public CurrentConditionsDisplay(WeatherData weatherData) {
+        this.weatherData = weatherData;
+        weatherData.registerObserver(this);
     }
 
     @Override
@@ -21,10 +25,10 @@ public class CurrentConditionsDisplay implements Observer, DisplayElement {
     }
 
     @Override
-    public void update(float temp, float humidity, float pressure) {
-        this.temperature = temp;
-        this.humidity = humidity;
-        this.pressure = pressure;
+    public void update() {
+        this.temperature = weatherData.getTemperature();
+        this.humidity = weatherData.getHumidity();
+        this.pressure = weatherData.getPressure();
         display();
     }
 }
