@@ -4,6 +4,7 @@ import BehavioralDesignPattern.Observer.Example.Observable.Subject;
 import BehavioralDesignPattern.Observer.Example.Observable.WeatherData;
 import BehavioralDesignPattern.Observer.Example.Observer.CurrentConditionsDisplay;
 import BehavioralDesignPattern.Observer.Example.Observer.Observer;
+import BehavioralDesignPattern.Observer.Example.Observer.WeatherForecastDisplay;
 
 public class Demo {
 
@@ -11,8 +12,10 @@ public class Demo {
         // Initialize Subject
         WeatherData weatherData = new WeatherData();
 
-        // Add observers
+        // Add current weather display observer
         CurrentConditionsDisplay currentConditionsDisplay = new CurrentConditionsDisplay(weatherData);
+        // Add weather forecast display observer
+        WeatherForecastDisplay weatherForecastDisplay = new WeatherForecastDisplay(weatherData);
 
         weatherData.setMeasurements(1,1,1);
         System.out.println();
