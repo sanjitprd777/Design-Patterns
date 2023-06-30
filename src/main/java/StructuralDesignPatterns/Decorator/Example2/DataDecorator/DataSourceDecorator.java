@@ -4,6 +4,7 @@ import StructuralDesignPatterns.Decorator.Example2.Data.DataSource;
 
 public class DataSourceDecorator implements DataSource {
 
+    // HAS-A relationship.
     private final DataSource dataSource;
 
     public DataSourceDecorator(DataSource dataSource) {

@@ -2,16 +2,16 @@ package StructuralDesignPatterns.Decorator.Example1.BasePizza;
 
 public class Margherita extends Pizza {
 
-    public Margherita() {
-        super.pizzaName = "Margherita";
+    public Margherita(Size size) {
+        super("Margherita", size);
     }
 
     @Override
     public double price() {
-        return 100.12;
-    }
-
-    public String pizzaName() {
-        return "Pizza name is: " + super.pizzaName;
+        return switch (size) {
+            case LARGE -> 250;
+            case MEDIUM -> 200;
+            case SMALL -> 100;
+        };
     }
 }

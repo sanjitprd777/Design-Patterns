@@ -2,6 +2,9 @@ Decorator Pattern:
 Decorator is a structural pattern that allows adding new behaviors to objects dynamically by placing them inside
 special wrapper objects, called decorators.
 - Add new behaviors to objects by placing these objects inside special wrapper objects that contain the behaviors.
+- The Decorator Pattern attaches additional responsibilities to an object dynamically. Decorators provide a flexible
+  alternative to subclassing for extending functionality.
+
 
 Problem:
 Consider a notification library which aims to notify the user from an app based on events.

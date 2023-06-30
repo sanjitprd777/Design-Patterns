@@ -10,4 +10,8 @@ public abstract class Toppings extends Pizza {
         this.pizza = pizza;
         this.toppingName = toppingName;
     }
+
+    public String pizzaName() {
+        return pizza.pizzaName() + ", " + toppingName;
+    }
 }

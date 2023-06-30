@@ -9,7 +9,7 @@ import StructuralDesignPatterns.Decorator.Example1.PizzaDecorator.Paneer;
 public class Demo {
 
     public static void main(String[] args) {
-        Pizza pizza = new Margherita();
+        Pizza pizza = new Margherita(Pizza.Size.MEDIUM);
         System.out.println("Your " + pizza.pizzaName() + " and the price is: " + pizza.price());
 
         System.out.println("Okay, adding extra cheese to order");
@@ -22,7 +22,7 @@ public class Demo {
 
         System.out.println();
 
-        Pizza pizza1 = new FarmHouse();
+        Pizza pizza1 = new FarmHouse(Pizza.Size.LARGE);
         System.out.println("Your " + pizza1.pizzaName() + " and the price is: " + pizza1.price());
 
         System.out.println("Okay, adding extra paneer to order");

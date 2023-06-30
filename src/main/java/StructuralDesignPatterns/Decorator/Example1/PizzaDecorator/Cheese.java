@@ -12,9 +12,4 @@ public class Cheese extends Toppings {
     public double price() {
         return pizza.price() + 20.0;
     }
-
-    @Override
-    public String pizzaName() {
-        return pizza.pizzaName() + " + " + super.toppingName;
-    }
 }
