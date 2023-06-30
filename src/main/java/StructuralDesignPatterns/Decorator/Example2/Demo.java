@@ -16,7 +16,7 @@ public class Demo {
 
         System.out.println("Encoding data:");
         DataSourceDecorator encryptDataSource = new EncryptData(dataSource);
-        encryptDataSource.writeData("Sanjit Prasad");
+        encryptDataSource.writeData(dataSource.readData());
         System.out.println("Encoded data is: " + dataSource.readData());
         System.out.println("Decoding data:");
         System.out.println("Decoded data is: " + encryptDataSource.readData());
