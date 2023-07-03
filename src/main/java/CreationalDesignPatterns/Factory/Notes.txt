@@ -2,10 +2,14 @@ Factory Pattern:
 Factory Method is a creational design pattern that provides an interface for creating objects in a superclass,
 but allows subclasses to alter the type of objects that will be created.
 
+Factory Method Pattern:
+The Factory Method Pattern defines an interface for creating an object, but lets subclasses decide which class
+to instantiate. Factory Method lets a class deferred instantiation to subclasses.
+
 Problem:
 You create a logistic application.
-In first version of app, you handle transportation by Truck. You added Truck class and most of the code lies in it.
-After sometime, you want to add transportation by Boat. Now most of the code is coupled with Truck class hence it
+In the first version of the app, you handle transportation by Truck. You added Truck class and most of the code lies in it.
+After sometime, you want to add transportation by Boat. Now most of the code is coupled with Truck class, hence it
 needs a lot of changes to add new transportation mediums.
 
 Solution:
@@ -16,6 +20,22 @@ Objects returned by a factory method are often referred to as products.
 
 
 Applicability
-Use the Factory Method when you don’t know beforehand the exact types and dependencies of the objects your code should work with.
-The Factory Method separates product construction code from the code that actually uses the product. Therefore it’s easier to extend the product construction code independently from the rest of the code.
-For example, to add a new product type to the app, you’ll only need to create a new creator subclass and override the factory method in it.
+- Use the Factory Method when you don’t know beforehand the exact types and dependencies of the objects your code should work with.
+- The Factory Method separates product construction code from the code that actually uses the product.
+  Therefore, it’s easier to extend the product construction code independently of the rest of the code.
+- For example, to add a new product type to the app, you'll only need to create a new creator subclass and override the factory method in it.
+- Use the Factory Method when you want to provide users of your library or framework with a way to extend its internal components.
+- Use the Factory Method when you want to save system resources by reusing existing objects instead of rebuilding them each time.
+
+
+How to Implement
+1. Make all products follow the same interface. This interface should declare methods that make sense in every product.
+2. Add an empty factory method inside the creator class. The return type of the method should match the common product interface.
+3. In the creator's code, find all references to product constructors. One by one, replace them with calls to the
+   factory method, while extracting the product creation code into the factory method.
+4. Now, create a set of creator subclasses for each type of product listed in the factory method. Override the factory
+   method in the subclasses and extract the appropriate bits of construction code from the base method.
+5. If there are too many product types, and it doesn’t make sense to create subclasses for all of them, you can reuse
+   the control parameter from the base class in subclasses.
+6. If, after all the extractions, the base factory method has become empty, you can make it abstract.
+   If there’s something left, you can make it a default behavior of the method.

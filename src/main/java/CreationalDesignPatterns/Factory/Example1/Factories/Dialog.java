@@ -6,6 +6,7 @@ public abstract class Dialog {
 
     public void renderWindow() {
         Button okButton = createButton();
+        System.out.println("Created Button class: " + okButton.getClass().getName());
         okButton.render();
     }
 
