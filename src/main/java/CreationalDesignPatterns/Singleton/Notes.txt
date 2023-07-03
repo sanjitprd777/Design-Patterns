@@ -1,7 +1,7 @@
 Singleton Pattern
-- Ensure that a class has only one instance.
-- Provides a global access point to that instance.
+Ensures a class has only one instance, and provides a global point of access to it.
 
+NOTE: You can use Java’s enums to simplify your Singleton implementation.
 
 Problem:
 Ensure that a class has just a single instance.

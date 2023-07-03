@@ -14,6 +14,9 @@ public class Singleton {
             System.out.println("Creating Singleton instance variable.");
             instance = new Singleton(value);
         }
+        else {
+            System.out.println("Returning old instance variable on subsequent calls.");
+        }
         return instance;
     }
 }

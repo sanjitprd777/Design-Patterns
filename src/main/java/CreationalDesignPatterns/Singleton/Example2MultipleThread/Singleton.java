@@ -15,7 +15,11 @@ public class Singleton {
 
     public static Singleton getInstance(String value) {
         if (instance == null) {
+            System.out.println("Creating Singleton instance variable.");
             instance = new Singleton(value);
+        }
+        else {
+            System.out.println("Returning old instance variable on subsequent calls.");
         }
         return instance;
     }
