@@ -6,11 +6,13 @@ Factory Method Pattern:
 The Factory Method Pattern defines an interface for creating an object, but lets subclasses decide which class
 to instantiate. Factory Method lets a class deferred instantiation to subclasses.
 
+
 Problem:
 You create a logistic application.
 In the first version of the app, you handle transportation by Truck. You added Truck class and most of the code lies in it.
 After sometime, you want to add transportation by Boat. Now most of the code is coupled with Truck class, hence it
 needs a lot of changes to add new transportation mediums.
+
 
 Solution:
 The Factory Method pattern suggests that you replace direct object construction calls (using the new operator)

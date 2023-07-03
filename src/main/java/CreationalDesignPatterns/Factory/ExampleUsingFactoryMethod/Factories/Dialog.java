@@ -1,6 +1,6 @@
-package CreationalDesignPatterns.Factory.Example1.Factories;
+package CreationalDesignPatterns.Factory.ExampleUsingFactoryMethod.Factories;
 
-import CreationalDesignPatterns.Factory.Example1.Buttons.Button;
+import CreationalDesignPatterns.Factory.ExampleUsingFactoryMethod.Buttons.Button;
 
 public abstract class Dialog {
 

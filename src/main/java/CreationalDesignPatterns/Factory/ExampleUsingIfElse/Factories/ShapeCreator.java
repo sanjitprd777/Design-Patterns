@@ -1,6 +1,6 @@
-package CreationalDesignPatterns.Factory.Example2.Factories;
+package CreationalDesignPatterns.Factory.ExampleUsingIfElse.Factories;
 
-import CreationalDesignPatterns.Factory.Example2.Products.Shape;
+import CreationalDesignPatterns.Factory.ExampleUsingIfElse.Products.Shape;
 
 public class ShapeCreator {
 
@@ -10,8 +10,11 @@ public class ShapeCreator {
         this.shapeFactory = shapeFactory;
     }
 
-    public Shape getShape(String type) {
-        return shapeFactory.getShapeProduct(type);
+    public void getShape(String type) {
+        // Here we can do many things before returning the shape object.
+        Shape shape = shapeFactory.getShapeProduct(type);
+
+        shape.draw();
 
         /*
         Bad code to place here. Better move them to Factory:
@@ -24,7 +27,7 @@ public class ShapeCreator {
         you'll have to reopen this code and examine what needs to be added (or deleted).
         Often this kind of code ends up in several parts of the application,
         making maintenance and updates more difficult and error-prone.
-        For better implementation: Checkout Example2.
+        For better implementation: Checkout ExampleUsingFactoryMethod.
         */
     }
 }

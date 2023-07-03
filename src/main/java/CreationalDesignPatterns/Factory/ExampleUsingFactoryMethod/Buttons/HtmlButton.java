@@ -1,4 +1,4 @@
-package CreationalDesignPatterns.Factory.Example1.Buttons;
+package CreationalDesignPatterns.Factory.ExampleUsingFactoryMethod.Buttons;
 
 public class HtmlButton implements Button {
     @Override

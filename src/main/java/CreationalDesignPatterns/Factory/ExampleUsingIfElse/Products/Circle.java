@@ -1,4 +1,4 @@
-package CreationalDesignPatterns.Factory.Example2.Products;
+package CreationalDesignPatterns.Factory.ExampleUsingIfElse.Products;
 
 public class Circle implements Shape{
     @Override
