@@ -4,20 +4,16 @@ public abstract class LogProcessor {
 
     private final LogProcessor logProcessor;
 
-    public static final String INFO = "INFO";
-    public static final String DEBUG = "DEBUG";
-    public static final String ERROR = "ERROR";
-
     public LogProcessor(LogProcessor logProcessor) {
         this.logProcessor = logProcessor;
     }
 
-    public void log(String logLevel, String message) {
+    public void log(LogType logLevel, String message) {
         if (logProcessor != null) {
             logProcessor.log(logLevel, message);
         }
         else {
-            throw new AssertionError("Invalid log method: " + logLevel + " with message: " + message);
+            System.out.println("Invalid log method: " + logLevel + " with message: " + message);
         }
     }
 }

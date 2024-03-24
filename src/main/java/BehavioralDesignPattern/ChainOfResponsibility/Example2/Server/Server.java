@@ -12,9 +12,9 @@ public class Server {
     public Server(Middleware middleware) {
         this.middleware = middleware;
         userDb = new HashMap<>();
-        userDb.put("sanjit@gmail.com", "12345");
-        userDb.put("sahil@gmail.com", "12345");
-        userDb.put("surendra@gmail.com", "12345");
+        userDb.put("sanjit", "12345");
+        userDb.put("sahil", "12345");
+        userDb.put("surendraadmin", "12345");
     }
 
     public boolean checkUser(String email, String password) {
