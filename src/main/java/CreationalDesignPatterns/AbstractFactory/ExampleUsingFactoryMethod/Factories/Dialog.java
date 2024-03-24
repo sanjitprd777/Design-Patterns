@@ -1,6 +1,6 @@
-package CreationalDesignPatterns.Factory.ExampleUsingFactoryMethod.Factories;
+package CreationalDesignPatterns.AbstractFactory.ExampleUsingFactoryMethod.Factories;
 
-import CreationalDesignPatterns.Factory.ExampleUsingFactoryMethod.Buttons.Button;
+import CreationalDesignPatterns.AbstractFactory.ExampleUsingFactoryMethod.Buttons.Button;
 
 public abstract class Dialog {
     protected Button okButton;

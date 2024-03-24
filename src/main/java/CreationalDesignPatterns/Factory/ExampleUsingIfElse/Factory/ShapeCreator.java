@@ -1,4 +1,4 @@
-package CreationalDesignPatterns.Factory.ExampleUsingIfElse.Factories;
+package CreationalDesignPatterns.Factory.ExampleUsingIfElse.Factory;
 
 import CreationalDesignPatterns.Factory.ExampleUsingIfElse.Products.Shape;
 

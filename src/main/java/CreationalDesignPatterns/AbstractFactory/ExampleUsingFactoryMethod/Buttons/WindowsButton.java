@@ -1,4 +1,4 @@
-package CreationalDesignPatterns.Factory.ExampleUsingFactoryMethod.Buttons;
+package CreationalDesignPatterns.AbstractFactory.ExampleUsingFactoryMethod.Buttons;
 
 public class WindowsButton implements Button {
     @Override
