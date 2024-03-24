@@ -13,7 +13,7 @@ public class NYStyleCheesePizza extends Pizza {
     public NYStyleCheesePizza(PizzaIngredientsFactory pizzaIngredientsFactory) {
         this.pizzaIngredientsFactory = pizzaIngredientsFactory;
         name = "NY Style Sauce and Cheese Pizza";
-        toppings.add("Grated Reggiano Cheese");
+        toppings.add("Grated Oregano Cheese");
     }
 
     @Override
@@ -21,8 +21,7 @@ public class NYStyleCheesePizza extends Pizza {
         System.out.println("Preparing " + name);
         dough = new Dough("Thin Crust Dough");
         sauce = new Sauce("Marinara Sauce");
-        veggies = new ArrayList<>();
-        veggies.add(new Veggie("Grated Reggiano Cheese"));
+        veggies.add(new Veggie("Grated Oregano Cheese"));
 
 //        System.out.println("Tossing dough...");
 //        System.out.println("Adding sauce...");

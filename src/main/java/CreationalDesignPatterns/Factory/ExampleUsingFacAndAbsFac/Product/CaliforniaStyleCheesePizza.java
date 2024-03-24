@@ -21,7 +21,6 @@ public class CaliforniaStyleCheesePizza extends Pizza {
         System.out.println("Preparing " + name);
         dough = new Dough("Thick Crust Dough");
         sauce = new Sauce("Spicy Sauce");
-        veggies = new ArrayList<>();
         veggies.add(new Veggie("Healthy Cheese"));
     }
 }

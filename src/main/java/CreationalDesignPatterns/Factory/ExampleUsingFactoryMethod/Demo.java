@@ -1,18 +1,16 @@
 package CreationalDesignPatterns.Factory.ExampleUsingFactoryMethod;
 
-import CreationalDesignPatterns.Factory.ExampleUsingFactoryMethod.Buttons.Button;
 import CreationalDesignPatterns.Factory.ExampleUsingFactoryMethod.Factories.Dialog;
-import CreationalDesignPatterns.Factory.ExampleUsingFactoryMethod.Factories.HtmlDialog;
-import CreationalDesignPatterns.Factory.ExampleUsingFactoryMethod.Factories.WindowsDialog;
+import CreationalDesignPatterns.Factory.ExampleUsingFactoryMethod.Factories.DialogCreator;
+import CreationalDesignPatterns.Factory.ExampleUsingFactoryMethod.Factories.DialogEnum;
 
 public class Demo {
 
     public static void main(String ...args) {
-        Dialog dialog = new WindowsDialog();
-        Button button = dialog.createButton();
-        button.render();
-
-        dialog = new HtmlDialog();
+        Dialog dialog = DialogCreator.CreateDialog(DialogEnum.HTML_DIALOG);
         dialog.renderWindow();
+
+        Dialog dialog1 = DialogCreator.CreateDialog(DialogEnum.WINDOWS_DIALOG);
+        dialog1.renderWindow();
     }
 }

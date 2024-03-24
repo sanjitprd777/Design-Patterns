@@ -13,7 +13,7 @@ public abstract class Pizza {
     String name;
     Dough dough;
     Sauce sauce;
-    List<Veggie> veggies;
+    List<Veggie> veggies = new ArrayList<>();
     Cheese cheese;
     List<String> toppings = new ArrayList<>();
 

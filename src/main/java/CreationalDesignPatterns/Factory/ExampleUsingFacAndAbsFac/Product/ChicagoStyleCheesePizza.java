@@ -20,7 +20,6 @@ public class ChicagoStyleCheesePizza extends Pizza {
         System.out.println("Preparing " + name);
         dough = new Dough("Extra Thick Crust Dough");
         sauce = new Sauce("Plum Tomato Sauce");
-        veggies = new ArrayList<>();
         veggies.add(new Veggie("Shredded Mozzarella Cheese"));
     }
 
