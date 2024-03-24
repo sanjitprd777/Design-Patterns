@@ -1,6 +1,7 @@
 Command Pattern:
-- Command is a behavioral design pattern that turns a request into a stand-alone object that contains all information about the request.
-  This transformation lets you pass requests as a method arguments, delay or queue a request’s execution, and support undoable operations.
+- Command is a behavioral design pattern that turns a request into a stand-alone object that contains
+all information about the request. This transformation lets you pass requests as a method arguments,
+delay or queue a request’s execution, and support undoable operations.
 
 
 Problem:
@@ -11,3 +12,17 @@ This leads to a lot of code duplication with enormous number of subclasses.
 
 
 Solution:
+
+
+
+Applicability:
+Use the Command pattern when you want to parametrize objects with operations.
+The Command pattern can turn a specific method call into a stand-alone object.
+This change opens up a lot of interesting uses: you can pass commands as method arguments, store them inside other objects,
+switch linked commands at runtime, etc.
+
+Use the Command pattern when you want to queue operations, schedule their execution, or execute them remotely.
+As with any other object, a command can be serialized, which means converting it to a string that can be easily
+written to a file or a database. Later, the string can be restored as the initial command object.
+Thus, you can delay and schedule command execution. But there’s even more! In the same way, you can queue,
+log or send commands over the network.

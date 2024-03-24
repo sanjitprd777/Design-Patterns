@@ -9,10 +9,10 @@ import BehavioralDesignPattern.Strategy.Example.Duck.RubberDuck;
 public class Demo {
 
     public static void main(String[] args) {
-        MallardDuck mallardDuck = new MallardDuck();
+        Duck mallardDuck = new MallardDuck();
         mallardDuck.display();
         System.out.println();
-        RubberDuck rubberDuck = new RubberDuck();
+        Duck rubberDuck = new RubberDuck();
         rubberDuck.display();
 
         System.out.println();
