@@ -13,6 +13,6 @@ public class PoundWeight implements PoundWeightInterface {
 
     @Override
     public double weightInPounds(double x) {
-        return (kgWeight.weightInKG(x) * 2.20);
+        return (kgWeight.weightInKG(x) * 20.0 / 9.0);
     }
 }

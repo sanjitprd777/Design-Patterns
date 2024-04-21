@@ -1,6 +1,8 @@
 Adapter Pattern:
 - Allows objects with incomplete interfaces to collaborate.
 
+Note: It's a bridge between existing interface and expected interface.
+
 Problem:
 You create an app that generates data analytics and provides final data in XML format.
 Now you want to integrate new features, but the 3-rd party source accepts data in JSON.
