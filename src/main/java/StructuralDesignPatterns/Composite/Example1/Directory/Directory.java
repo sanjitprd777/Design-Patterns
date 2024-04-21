@@ -19,10 +19,10 @@ public class Directory implements FileDirectory {
         fileDirectories.add(fileDirectory);
     }
 
-    public void ls() {
+    public void ls(String path) {
         System.out.println("Directory Name: " + name);
         for (FileDirectory fileDirectory : fileDirectories) {
-            fileDirectory.ls();
+            fileDirectory.ls(path!=null?path+"/"+name:name);
         }
     }
 }

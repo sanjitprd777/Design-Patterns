@@ -15,6 +15,6 @@ public class Demo {
         directory1.add(file1);
         directory1.add(file2);
         directory.add(directory1);
-        directory.ls();
+        directory.ls(null);
     }
 }
