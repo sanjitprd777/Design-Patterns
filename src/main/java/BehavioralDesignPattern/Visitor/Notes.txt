@@ -1,0 +1,13 @@
+Visitor pattern helps us to add new functionalities/operations to a class without modifying its structure.
+It does so by separating all the operation from the object on which it operates.
+
+How to achieve this.
+Create two interface.
+One for element and another for operations.
+Implement multiple elements concrete class by implementing the element interface.
+Similarly, implement operations concrete class by implementing the operation interface.
+
+The operations concrete classes will have function overloading of methods based on element concrete class implementations.
+
+It uses "Double Dispatch" operation to perform action.
+First is based on concrete element class then calling concrete operation class.
