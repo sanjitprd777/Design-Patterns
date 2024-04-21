@@ -1,11 +1,16 @@
-package CreationalDesignPatterns.Builder.Example2;
+package CreationalDesignPatterns.Builder.Example2.StudentBuilder;
 
-public class StudentBuilder {
+import CreationalDesignPatterns.Builder.Example2.Student;
+
+import java.util.List;
+
+public abstract class StudentBuilder {
 
     private int id;
     private int age;
     private String name;
     private String rollNumber;
+    public List<String> subjects;
 
     public StudentBuilder() {}
 
@@ -43,6 +48,9 @@ public class StudentBuilder {
 
     public String getRollNumber() {
         return rollNumber;
+    }
+    public List<String> getSubjects() {
+        return subjects;
     }
 
     public Student build() {

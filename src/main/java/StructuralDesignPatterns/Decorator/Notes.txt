@@ -5,7 +5,6 @@ special wrapper objects, called decorators.
 - The Decorator Pattern attaches additional responsibilities to an object dynamically. Decorators provide a flexible
   alternative to subclassing for extending functionality.
 
-
 Problem:
 Consider a notification library which aims to notify the user from an app based on events.
 It consists of a few fields and a constructor and a single send() method. The method accepts an argument from a client
@@ -13,14 +12,12 @@ and sends the message to a list of "emails" passed to the notifier via its const
 Now, you want to add more features to notify user than just using email notification like SMS, Slack, etc.
 
 One solution is to extend the Notifier class and put additional notification methods in new subclasses.
-What if we want multiple notificaiton functionalities, create another subclass supporting multiple notify functionalities.
-
+What if we want multiple notification functionalities, create another subclass supporting multiple notify functionalities.
 
 Solution:
 Using a decorator pattern, we can define an interface and implement a base decorator class.
 We can also create another wrapper class that defines concrete wrapper functionalities which can be applied to the base
 wrapper object.
-
 
 Applicability
 - Use the Decorator pattern when you need to be able to assign extra behaviors to objects at

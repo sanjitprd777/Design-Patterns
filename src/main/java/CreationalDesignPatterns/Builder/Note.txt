@@ -2,6 +2,9 @@ Builder Pattern
 - Construct complex objects step by step.
 - Produce different types and representations of an object using the same construction code.
 
+Note: It's different from "Decorator Design Pattern" because Builder pattern can not handle dynamic creation of object
+with dynamic feature requirements.
+
 Problem:
 Imagine a complex object that requires step-by-step initialization of many fields and nested objects.
 Such initialization code is usually buried inside a monstrous constructor with lots of parameters.
