@@ -1,0 +1,2 @@
+Memento design pattern saves the object state as snapshots or history. This can be useful in case we want to perform
+undo operation.
