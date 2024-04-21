@@ -2,7 +2,7 @@ package CreationalDesignPatterns.Singleton.ExampleUsingEnums;
 
 public class Demo {
 
-    // ENUM is a guranteed Singleton.
+    // ENUM is a guaranteed Singleton.
     public enum Singleton {
         UNIQUE_INSTANCE;
         // This is the same as -> public static final Singleton UNIQUE_INSTANCE = new Singleton();

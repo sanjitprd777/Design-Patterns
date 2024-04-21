@@ -1,0 +1,4 @@
+Template Pattern is useful in case we want to execute a set of functions in some order and want to enforce the same
+to any classes that extends it.
+We can create an abstract class, add few methods in it and then create a final method that is calling those abstract
+methods in some order. Now any class that extends the abstract class will have to call the final declared method.
