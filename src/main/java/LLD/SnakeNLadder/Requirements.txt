@@ -1,0 +1,26 @@
+Objects Identification:
+Player, Dice, Board, Jump (Snake+Ladder), Cell
+
+Player (id, currentPosition)
+Dice (diceCount -> rollDice{})
+Board (cells[][] -> initGame, startGame)
+Cell (jump)
+Jump (start, end)
+Game (board, dice, player)
+
+
+Requirements:
+Number of dice:
+1 (but should be scalable)
+
+How many Snake n Ladder
+Define at runtime (Should be able to dynamically define)
+
+Winning condition:
+If one player wins (stop)
+
+Logic:
+Take ladder move up
+Bite by Snake, move down
+Finish at exact 100 position (not beyond)
+
