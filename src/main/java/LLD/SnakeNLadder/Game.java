@@ -10,9 +10,9 @@ import java.util.Random;
 
 public class Game {
 
-    private Board board;
-    private int dice;
-    private Deque<Player> players;
+    private final Board board;
+    private final int dice;
+    private final Deque<Player> players;
     Random random = new Random();
 
     public Game(int N, int snake, int ladder, int dice, Deque<Player> players) {
