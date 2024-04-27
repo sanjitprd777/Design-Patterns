@@ -40,16 +40,13 @@ public class Game {
 
     public void startGame() {
         // Flag to hold a value if any cell has moved from original position
-        boolean isWon = true;
-
         while (true) {
             if (board.printBoard(winningValue)) {
                 System.out.println("Game Won!!!");
-                isWon = true;
                 break;
             }
-            if (!board.hasFreeCells()) {
-                isWon = false;
+            else if (!board.hasFreeCells()) {
+                System.out.println("Game over!!! No more valid moves left");
                 break;
             }
             System.out.println("0 (left), 1 (right), 2 (top), 3 (bottom)");
@@ -77,7 +74,5 @@ public class Game {
                 }
             }
         }
-        if (!isWon)
-            System.out.println("Game over!!! No more valid moves left");
     }
 }
