@@ -1,6 +1,7 @@
 package LLD.SnakeNLadder;
 
 import LLD.SnakeNLadder.entities.Player;
+import LLD.SnakeNLadder.service.SnakeNLadder;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -13,8 +14,9 @@ public class Main {
         players.addLast(new Player("Sahil", 0));
         players.addLast(new Player("Surendra", 0));
 
-        Game game = new Game(10, 5, 6,6, players);
+        GamesFactory gamesFactory = new GamesFactory();
 
-        game.startGame();
+        SnakeNLadder snakeNLadder = gamesFactory.getSnakeNLadderGame(10, 5, 6, 6, players);
+        snakeNLadder.startGame();
     }
 }
