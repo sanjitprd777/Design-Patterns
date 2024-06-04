@@ -39,7 +39,7 @@ public class Game {
     }
 
     public void startGame() {
-        // Flag to hold a value if any cell has moved from original position
+        // Flag to hold a value if any cell has moved from the original position.
         while (true) {
             if (board.printBoard(winningValue)) {
                 System.out.println("Game Won!!!");

@@ -60,7 +60,7 @@ public class TicTacToe extends Game {
 
         ticTacToeBoard.getCell(x, y).setPiece(new Piece(player.getPiece().getPieceType()));
 
-        // Add piece to board state
+        // Add a piece to board state
         ticTacToeBoard.updateBoard(player.getPiece().getPieceType(), x, y);
         return true;
     }
