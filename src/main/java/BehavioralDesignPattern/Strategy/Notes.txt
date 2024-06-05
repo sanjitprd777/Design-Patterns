@@ -4,12 +4,12 @@ Strategy Pattern:
 
 
 Problem:
-Consider a Duck super class having 3 different types of subclass of duck.
+Consider a Duck superclass having three different types of subclass of duck.
 Now you define swim() and display() methods in Duck superclass.
 Your boss tell you to add fly() and quack() method for all duck.
-1. You thought of defining them in superclass. Problem all duck don't swim of quack. So you decide to override them in
-subclass. Problem is a lot of code duplication.
-2. You decide to create two interface fly and quack and implement them in subclass. Problem is code duplication.
+1. You thought of defining them in superclass. Problem all ducks don't swim or quack. So you decide to override them in
+subclass. The Problem is a lot of code duplication.
+2. You decide to create two interfaces fly and quack and implement them in subclass. The Problem is code duplication.
 
 
 Solution:
