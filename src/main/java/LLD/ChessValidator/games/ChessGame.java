@@ -9,11 +9,11 @@ public class ChessGame extends Game {
 
     public ChessGame(String name) {
         super(name);
-        initBoard();
+        initGame();
     }
 
     @Override
-    void initBoard() {
+    void initGame() {
         switch (name) {
             case "TwoPlayerChessGame": {
                 this.board = new ChessBoard(8);

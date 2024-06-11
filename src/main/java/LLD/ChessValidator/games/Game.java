@@ -11,5 +11,5 @@ public abstract class Game {
         System.out.println("Starting Game: " + name);
     }
 
-    abstract void initBoard();
+    abstract void initGame();
 }
