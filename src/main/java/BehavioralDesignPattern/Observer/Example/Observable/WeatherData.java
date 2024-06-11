@@ -31,7 +31,7 @@ public class WeatherData implements Subject {
     @Override
     public void notifyObserver() {
         System.out.println("Something has changed...");
-        if (observers.size() > 0) {
+        if (!observers.isEmpty()) {
             System.out.println("Notifying everyone!");
             for (Observer o : observers) {
                 o.update();
